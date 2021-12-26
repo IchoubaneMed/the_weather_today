@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="" width="70px" height="50px">
+        <h1>The Weather Today</h1>
+    </div>
+    <div class="form">
+        <form action="/" method="POST">
+            <input type="text" name="city" placeholder="City name">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</header>
+{% endblock %}
+{% block body %}
+<div class="countainer">
+    <section>
+        <div id="card">
+            <h1>{{curWeather.city}}</h1> <br>
+            <h3>{{curWeather.temperature}} °C</h3> <br>
+            <p>{{curWeather.description}}</p> <br>
+            <img src="http://openweathermap.org/img/w/{{ curWeather.icon }}.png" alt="">
+        </div>
+
+        <div id="map"></div>
+    </section>
+</div>
+<script>
+    var map = L.map('map').setView([{{curWeather.lat}}, {{curWeather.lon}}], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    var marker = L.marker([{{curWeather.lat}}, {{curWeather.lon}}]).addTo(map);
+    marker.bindPopup("<b>{{curWeather.city}}</b").openPopup();
+</script>
+{% endblock %}
+{% block footer %}
+    <footer>
+        <p>© Copyright 2022 Mohamed ICHOUBANE. All rights reserved.</p>
+    </footer>
+{% endblock %}
