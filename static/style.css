@@ -8,11 +8,11 @@
     margin: 0;
     padding: 0;
 }
-
+/*
 #main{
     display: flex;
     flex-direction: column;
-}
+}*/
 
 
 /* Header */
@@ -116,4 +116,45 @@ footer{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+/* Responsive rules */
+
+
+@media (max-width: 1000px) {
+
+    header{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+ 
+
+    .form input[type=text]{
+        width: 350px;
+    }
+
+    .form input[type=submit]{
+        width: 350px;
+        margin-top: 10px;
+    }
+
+
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    
 }
