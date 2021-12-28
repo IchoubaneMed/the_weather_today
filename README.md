@@ -2,10 +2,13 @@
 
 #### Video Demo:
 this is a weather application based on the data provided by the OpenWeatherMap API, the languages used in this application are:
+
 - HTML5
 - CSS3
 - JavaScript
 - Python
+
+
 beside these languages, i have used flask as core for this application, and leaflet library in order to render the map
 So the basic of this application is pretty simple, the user type the name of the city that he want to know its weather the he click the search button 
 as a result the application shows the the current weather in celsius relative the city with its location on the map 
