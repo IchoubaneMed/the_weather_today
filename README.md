@@ -1,6 +1,8 @@
 # the_weather_today
 
-#### Video Demo:
+#### Video Demo: https://youtu.be/YduThxH4luc
+
+
 this is a weather application based on the data provided by the OpenWeatherMap API, the languages used in this application are:
 
 - HTML5
